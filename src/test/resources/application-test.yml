@@ -1,0 +1,38 @@
+logging:
+  level:
+    root: info
+  pattern:
+    console: '%clr(%d{yy-MM-dd E HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(${PID}){faint} %clr(---){faint} %clr([%8.15t]){cyan} %clr(%-40.40logger{0}){blue} %clr(:){red} %clr(%m){faint}%n'
+
+spring:
+  main:
+    banner-mode: off
+  jpa:
+    open-in-view: false
+
+  #  h2:
+  #    console:
+  #      enabled: true
+  #      path: /h2
+
+  datasource:
+    # Connection properties of Data Source A
+    mysql:
+      jdbc-url: jdbc:h2:mem:foos;DB_CLOSE_DELAY=-1;NON_KEYWORDS=KEY,VALUE
+      driver-class-name: org.h2.Driver
+      username: sa
+      password: sa
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        ddl-auto: update
+    # Connection properties of Data Source B
+    psql:
+      jdbc-url: jdbc:h2:mem:bars;DB_CLOSE_DELAY=-1;NON_KEYWORDS=KEY,VALUE
+      driver-class-name: org.h2.Driver
+      username: sa
+      password: sa
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        ddl-auto: update
+
+
