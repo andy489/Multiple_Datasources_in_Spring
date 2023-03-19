@@ -196,3 +196,9 @@ README.html
 *.iml
 .idea
 .exercism
+.Rhistory
+gradle
+*.bat
+settings.gradle
+gradle/*
+
